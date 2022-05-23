@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(to right, rgb(145, 107, 216), rgb(175, 25, 175));
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calculatorContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 360px;
+    height: 430px;
+    margin: 0 auto;
+}
+
+button {
+    width: 90px;
+    height: 100px;
+    background-color: rgb(42, 55, 246);
+    font-size: large;
+    font-weight: 600;
+}
+
+#Clear {
+    width: 180px;
+    height: 100px;
+}
+
+#textEntry {
+    width: 360px;
+    height: 30px;
+    font-size: large;
+    font-weight: 600;
+    padding: 1em;
+    background-color: rgb(155, 83, 203);
+}
