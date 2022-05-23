@@ -1,38 +1,44 @@
 body {
-    background-image: linear-gradient(to right, rgb(145, 107, 216), rgb(175, 25, 175));
-    font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     text-align: center;
+    color: white;
+    background-image: linear-gradient(to left, rgb(11, 11, 96), rgb(23, 23, 159));
 }
 
 .calculatorContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 360px;
-    height: 430px;
+    width: 380px;
     margin: 0 auto;
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 button {
     width: 90px;
     height: 100px;
-    background-color: rgb(42, 55, 246);
-    font-size: large;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 1000;
+    margin: 2px;
+    background-color: rgb(194, 193, 193);
 }
 
 #Clear {
     width: 180px;
-    height: 100px;
+    height: 60px;
+    color: red;
 }
 
 #textEntry {
     width: 360px;
     height: 30px;
-    font-size: large;
+    font-size: 30px;
     font-weight: 600;
-    padding: 1em;
-    background-color: rgb(155, 83, 203);
+    padding: 7%;
+    color: black;
+    background-color: antiquewhite;
+    border-radius: 20px;
 }
