@@ -4,11 +4,13 @@ let calculatedTotal = 0.0;
 let num1 = "";
 let num2 = "";
 let initial = true;
+let pressed = false;
 //displays the number/symbol pressed in top box
 const writeEntry = function(value) {
         if (entry.length < 20) {
             entry += value;
             document.getElementById("textEntry").innerText = entry;
+            pressed = false;
         } else {}
     }
     //Multiply Function
@@ -22,6 +24,7 @@ const multiply = function() {
         calculate();
         operator = "multiply";
     }
+    pressed = false;
 }
 
 //DivideFunction
@@ -35,6 +38,7 @@ const divide = function() {
             calculate();
             operator = "divide";
         }
+        pressed = false;
     }
     //Substract Function
 const subtract = function() {
@@ -47,6 +51,8 @@ const subtract = function() {
             calculate();
             operator = "subtract";
         }
+        pressed = false;
+
     }
     //Sum Function
 const sum = function() {
@@ -59,23 +65,29 @@ const sum = function() {
         calculate();
         operator = "sum";
     }
+    pressed = false;
 }
-const calculate = function() {
-    let num2 = document.getElementById('textEntry').innerText;
 
-    if (operator == "multiply") {
-        calculatedTotal = parseFloat(num1) * parseFloat(num2);
-    } else if (operator == "divide") {
-        calculatedTotal = parseFloat(num1) / parseFloat(num2);
-    } else if (operator == "subtract") {
-        calculatedTotal = parseFloat(num1) - parseFloat(num2);
-    } else if (operator == "sum") {
-        calculatedTotal = parseFloat(num1) + parseFloat(num2);
+//calculates
+const calculate = function() {
+    if (pressed) {} else {
+        let num2 = document.getElementById('textEntry').innerText;
+
+        if (operator == "multiply") {
+            calculatedTotal = parseFloat(num1) * parseFloat(num2);
+        } else if (operator == "divide") {
+            calculatedTotal = parseFloat(num1) / parseFloat(num2);
+        } else if (operator == "subtract") {
+            calculatedTotal = parseFloat(num1) - parseFloat(num2);
+        } else if (operator == "sum") {
+            calculatedTotal = parseFloat(num1) + parseFloat(num2);
+        }
+        num2 = "";
+        entry = "";
+        document.getElementById('textEntry').innerText = calculatedTotal.toString();
+        num1 = calculatedTotal.toString();
     }
-    num2 = "";
-    entry = "";
-    document.getElementById('textEntry').innerText = calculatedTotal.toString();
-    num1 = calculatedTotal.toString();
+
 
 };
 
@@ -93,7 +105,11 @@ document.getElementById("/").addEventListener("click", divide);
 document.getElementById("-").addEventListener("click", subtract);
 document.getElementById("+").addEventListener("click", sum);
 document.getElementById("=").addEventListener("click", calculate)
-document.getElementById("=").addEventListener("click", () => { initial = true; })
+document.getElementById("=").addEventListener("click", () => {
+    initial = true;
+    pressed = true;
+
+})
 document.getElementById("Clear").addEventListener("click", clear);
 
 
